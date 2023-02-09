@@ -230,7 +230,7 @@
     <div class="container d-sm-none mt-3">
         <div style="border: 6px solid rgb(235, 124, 6);border-radius: 5px;">
             <div class="text-start fs-5 p-4 ">想去哪裡？</div>
-            <select name="" id="" class="form-control m-4" style="width:87%" ;>
+            <select name="" id="" class="form-control mx-4" style="width:89%" ;>
                 <option value="abc">選擇</option>
                 <option value="abc">日本</option>
                 <option value="abc">泰國</option>
@@ -709,7 +709,9 @@
 
             // ajax 範本
             $.ajax({
-                url: "https://tdx.transportdata.tw/api/basic/v2/Air/FIDS/Airport/Departure?IsCargo=false&%24top=30&%24format=JSON",
+                // 航班資料依據網路API，如無開放，則無顯示，第一行url註解掉的是原api
+                // url: "https://tdx.transportdata.tw/api/basic/v2/Air/FIDS/Airport/Departure?IsCargo=false&%24top=30&%24format=JSON",
+                url: "https://ptx.transportdata.tw/MOTC/v2/Air/FIDS/Flight?$top=1&$format=JSON",
                 type: "get",
                 dataType: 'json',
                 success: function (res) {
